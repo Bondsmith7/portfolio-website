@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "title": "Portfolio Website & VPS Configuration",
+    "description": "Built and deployed this portfolio website on a Digital Ocean VPS droplet, configuring Ubuntu, Nginx web server, UFW firewall with secure port restrictions (443, SSH), and SSH key authentication for enhanced security.",
+    "category": "technology",
+    "technologies": ["Digital Ocean VPS", "Ubuntu Server", "Nginx Configuration", "UFW Firewall", "SSH Key Authentication", "Linux Administration"],
+    "image": "/images/serverCode.png",
+    "featured": true,
+    "date": "2025-06-02"
+  },
+  {
+    "id": 2,
+    "title": "Home Composting System",
+    "description": "Developed an efficient composting system using home food scraps (no dairy/meat) mixed with leaves and woodchips in a 50/50 green-to-brown ratio, producing usable compost in 2-4 months.",
+    "category": "agriculture",
+    "technologies": ["Composting", "Organic Waste Management", "Soil Amendment", "Sustainable Practices"],
+    "image": "/images/composting-project.jpg",
+    "featured": true,
+    "date": "2025-6-01"
+  },
+  {
+    "id": 3,
+    "title": "Sustainable Vegetable Garden",
+    "description": "Established a productive vegetable garden growing sweet potatoes, tomatoes, peppers, melons, and zucchini using homemade compost and upcycled materials. Built raised garden beds and climbing structures from reclaimed wood pallets.",
+    "category": "agriculture",
+    "technologies": ["Vegetable Gardening", "Compost Integration", "Upcycling", "Garden Design", "Sustainable Materials"],
+    "image": "/images/gardening-project.png",
+    "featured": true,
+    "date": "2025-06-02"
+  }
+]
