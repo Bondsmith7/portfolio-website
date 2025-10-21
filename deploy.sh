@@ -11,6 +11,18 @@ echo "🚀 Starting Portfolio Website Deployment..."
 echo "📦 Updating system packages..."
 sudo apt update && sudo apt upgrade -y
 
+# Create swap file if it doesn't exist (helps with low memory servers)
+if ! grep -q "swapfile" /etc/fstab; then
+    echo "💾 Creating swap file for low-memory server..."
+    sudo fallocate -l 2G /swapfile
+    sudo chmod 600 /swapfile
+    sudo mkswap /swapfile
+    sudo swapon /swapfile
+    echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+    sudo sysctl vm.swappiness=10
+    echo "✅ Swap file created"
+fi
+
 # Install Node.js (if not already installed)
 if ! command -v node &> /dev/null; then
     echo "📦 Installing Node.js..."
@@ -40,7 +52,11 @@ fi
 
 # Install dependencies
 echo "📦 Installing dependencies..."
-npm install
+# Increase Node memory limit and use --prefer-offline for faster install
+NODE_OPTIONS="--max-old-space-size=512" npm install --prefer-offline --no-audit --legacy-peer-deps || {
+    echo "⚠️  First attempt failed, trying with reduced concurrency..."
+    npm install --prefer-offline --no-audit --legacy-peer-deps --maxsockets=1
+}
 
 # Create environment file
 echo "🔧 Setting up environment..."
@@ -54,7 +70,8 @@ EOF
 
 # Build the application for production
 echo "🔨 Building application for production..."
-npm run build
+# Increase Node memory limit for build process
+NODE_OPTIONS="--max-old-space-size=1024" npm run build
 
 # Set proper permissions for standalone build
 echo "🔐 Setting up permissions..."
