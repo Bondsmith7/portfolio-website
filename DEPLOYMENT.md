@@ -9,6 +9,14 @@ This guide will help you deploy your portfolio website on an Ubuntu server with 
 - SSH access to your server
 - Resend API key for contact form
 
+## Production Optimizations
+
+This deployment uses Next.js standalone build for optimal performance:
+- **Standalone Build**: Self-contained server with minimal dependencies
+- **Systemd Service**: Better process management and auto-restart
+- **Nginx Reverse Proxy**: Handles static files and SSL termination
+- **Security Hardening**: UFW firewall and systemd security settings
+
 ## Quick Deployment
 
 1. **SSH into your server:**
@@ -31,7 +39,7 @@ This guide will help you deploy your portfolio website on an Ubuntu server with 
 
 4. **Restart the application:**
    ```bash
-   pm2 restart portfolio
+   sudo systemctl restart portfolio
    ```
 
 ## Manual Deployment Steps

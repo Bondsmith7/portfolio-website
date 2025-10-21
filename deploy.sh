@@ -40,7 +40,7 @@ fi
 
 # Install dependencies
 echo "📦 Installing dependencies..."
-npm install --production
+npm install
 
 # Create environment file
 echo "🔧 Setting up environment..."
@@ -52,9 +52,14 @@ NODE_ENV=production
 PORT=3000
 EOF
 
-# Build the application
-echo "🔨 Building application..."
+# Build the application for production
+echo "🔨 Building application for production..."
 npm run build
+
+# Set proper permissions for standalone build
+echo "🔐 Setting up permissions..."
+sudo chown -R www-data:www-data /var/www/portfolio
+sudo chmod -R 755 /var/www/portfolio
 
 # Install and configure Nginx
 echo "🌐 Configuring Nginx..."
@@ -73,10 +78,17 @@ echo "🚀 Starting services..."
 sudo systemctl restart nginx
 sudo systemctl enable nginx
 
-# Start the application with PM2
-pm2 start npm --name "portfolio" -- start
-pm2 save
-pm2 startup
+# Setup systemd service for better process management
+echo "⚙️ Setting up systemd service..."
+sudo cp portfolio.service /etc/systemd/system/
+sudo systemctl daemon-reload
+sudo systemctl enable portfolio
+sudo systemctl start portfolio
+
+# Alternative: Start with PM2 (commented out in favor of systemd)
+# pm2 start npm --name "portfolio" -- start
+# pm2 save
+# pm2 startup
 
 # Configure UFW firewall
 echo "🔥 Configuring firewall..."

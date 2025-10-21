@@ -5,10 +5,9 @@ export async function POST(request: NextRequest) {
   try {
     // Check if API key is loaded
     if (!process.env.RESEND_API_KEY) {
-      console.error('RESEND_API_KEY is not defined')
       return NextResponse.json(
-        { error: 'API key not configured' },
-        { status: 500 }
+        { error: 'Service temporarily unavailable' },
+        { status: 503 }
       )
     }
 
@@ -18,9 +17,6 @@ export async function POST(request: NextRequest) {
     const RESEND_EMAIL_FROM = process.env.RESEND_EMAIL_FROM || 'onboarding@resend.dev'
     
     const { name, email, subject, message } = await request.json()
-    
-    // Debug: Log the received data
-    console.log('Received form data:', { name, email, subject, message })
 
     // Validate required fields
     if (!name || !email || !subject || !message) {
@@ -64,7 +60,6 @@ export async function POST(request: NextRequest) {
     })
 
     if (error) {
-      console.error('Resend error:', error)
       return NextResponse.json(
         { error: 'Failed to send email' },
         { status: 500 }
@@ -72,12 +67,11 @@ export async function POST(request: NextRequest) {
     }
 
     return NextResponse.json(
-      { message: 'Email sent successfully', id: data?.id },
+      { message: 'Email sent successfully' },
       { status: 200 }
     )
 
   } catch (error) {
-    console.error('Contact form error:', error)
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
