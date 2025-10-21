@@ -21,7 +21,7 @@ export default function Hero() {
         >
           <h1 className="text-5xl md:text-7xl font-bold text-secondary-900 mb-6">
             Hi, I'm{' '}
-            <span className="text-primary-600">Nathan</span>
+            <span className="text-primary-600">Nathan Emanuel</span>
           </h1>
           
           <motion.p
