@@ -2,31 +2,58 @@
   {
     "id": 1,
     "title": "Portfolio Website & VPS Configuration",
+    "slug": "portfolio-website-and-vps",
     "description": "Built and deployed this portfolio website on a Digital Ocean VPS droplet, configuring Ubuntu, Nginx web server, UFW firewall with secure port restrictions (443, SSH), and SSH key authentication for enhanced security.",
     "category": "technology",
     "technologies": ["Digital Ocean VPS", "Ubuntu Server", "Nginx Configuration", "UFW Firewall", "SSH Key Authentication", "Linux Administration"],
     "image": "/images/serverCode.png",
     "featured": true,
-    "date": "2025-06-02"
+    "date": "2025-06-02",
+    "longDescription": "End-to-end setup of a production-ready Next.js portfolio on a hardened VPS. Includes repeatable deployment, SSL, reverse proxying, and a CI-friendly process.",
+    "steps": [
+      { "date": "2025-05-28", "title": "Provision droplet", "details": "Created Ubuntu LTS droplet on DigitalOcean and configured SSH keys." },
+      { "date": "2025-05-29", "title": "Secure server", "details": "Configured UFW firewall, disabled password SSH, enabled fail2ban." },
+      { "date": "2025-05-30", "title": "Install runtime", "details": "Installed Node.js via nvm, PM2 for process management, and Nginx." },
+      { "date": "2025-05-31", "title": "Reverse proxy + TLS", "details": "Set up Nginx server blocks and Let's Encrypt certificates with auto-renewal." },
+      { "date": "2025-06-01", "title": "CI-friendly deploy", "details": "Created PM2 service script and deploy script for zero-downtime restarts." }
+    ]
   },
   {
     "id": 2,
     "title": "Home Composting System",
+    "slug": "home-composting-system",
     "description": "Developed an efficient composting system using home food scraps (no dairy/meat) mixed with leaves and woodchips in a 50/50 green-to-brown ratio, producing usable compost in 2-4 months.",
     "category": "agriculture",
     "technologies": ["Composting", "Organic Waste Management", "Soil Amendment", "Sustainable Practices"],
     "image": "/images/composting-project.jpg",
     "featured": true,
-    "date": "2025-6-01"
+    "date": "2025-06-01",
+    "longDescription": "A practical backyard composting workflow that converts household greens and browns into rich soil amendment.",
+    "steps": [
+      { "date": "2025-04-15", "title": "Design bins", "details": "Chose dual-bin layout for active and curing compost." },
+      { "date": "2025-04-20", "title": "Collect browns", "details": "Stockpiled leaves and woodchips to balance high-nitrogen kitchen scraps." },
+      { "date": "2025-05-01", "title": "Begin layering", "details": "Started alternating layers at ~50/50 green to brown ratio." },
+      { "date": "2025-05-18", "title": "Turn and aerate", "details": "Turned pile biweekly, monitored moisture and temperature." },
+      { "date": "2025-06-20", "title": "Harvest compost", "details": "Sifted mature compost and returned overs to active bin." }
+    ]
   },
   {
     "id": 3,
     "title": "Sustainable Vegetable Garden",
+    "slug": "sustainable-vegetable-garden",
     "description": "Established a productive vegetable garden growing sweet potatoes, tomatoes, peppers, melons, and zucchini using homemade compost and upcycled materials. Built raised garden beds and climbing structures from reclaimed wood pallets.",
     "category": "agriculture",
     "technologies": ["Vegetable Gardening", "Compost Integration", "Upcycling", "Garden Design", "Sustainable Materials"],
     "image": "/images/gardening-project.png",
     "featured": true,
-    "date": "2025-06-02"
+    "date": "2025-06-02",
+    "longDescription": "Raised-bed garden built with reclaimed materials and fed with home compost to reduce cost and waste.",
+    "steps": [
+      { "date": "2025-03-10", "title": "Plan layout", "details": "Sketched bed placement, companion plants, and trellis needs." },
+      { "date": "2025-03-22", "title": "Build beds", "details": "Constructed raised beds and trellises from reclaimed pallets." },
+      { "date": "2025-04-05", "title": "Soil prep", "details": "Mixed topsoil with sifted compost." },
+      { "date": "2025-04-18", "title": "Planting", "details": "Transplanted starts and direct-sowed quick crops." },
+      { "date": "2025-06-02", "title": "First harvest", "details": "Harvested early tomatoes and zucchini; adjusted staking." }
+    ]
   }
 ]
