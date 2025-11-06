@@ -55,5 +55,31 @@
       { "date": "2025-04-18", "title": "Planting", "details": "Transplanted starts and direct-sowed quick crops." },
       { "date": "2025-06-02", "title": "First harvest", "details": "Harvested early tomatoes and zucchini; adjusted staking." }
     ]
+  },
+  {
+    "id": 4,
+    "title": "Resolved Running Toilet/Replaced Diaphragm",
+    "slug": "resolved-running-toilet-replaced-diaphragm",
+    "description": "Fixed a running Sloan Optima toilet by replacing the damaged diaphragm that was allowing continuous water flow. Identified the issue through research, sourced the correct 1.6 gpf replacement part, and successfully completed the repair.",
+    "category": "handyman",
+    "technologies": ["Plumbing Repair", "Toilet Maintenance", "Diaphragm Replacement", "Sloan Optima", "Water Conservation"],
+    "image": "/images/diaphragm1.jpg",
+    "images": [
+      "/images/diaphragm1.jpg",
+      "/images/diaphragm2.jpg",
+      "/images/diaphragm3.jpg",
+      "/images/diaphragm4.jpg",
+      "/images/diaphragm5.jpg"
+    ],
+    "featured": true,
+    "date": "2025-10-24",
+    "longDescription": "Diagnosed and repaired a running toilet issue by replacing the damaged diaphragm in a Sloan Optima flush valve. The old diaphragm was compromised, causing water to continuously run. After researching the problem and identifying the correct replacement part (1.6 gpf, not 1.28 gpf), I successfully disassembled the flush valve assembly, replaced the diaphragm, and reassembled the unit. The repair resolved the running water issue completely.",
+    "steps": [
+      { "date": "2025-10-20", "title": "Identified the problem", "details": "Researched the running water issue and determined the diaphragm was damaged. Found helpful resources including YouTube tutorials to understand the repair process.", "videoUrl": "https://www.youtube.com/watch?v=bHQaC-gTYVc" },
+      { "date": "2025-10-21", "title": "Purchased correct part", "details": "Bought the correct diaphragm replacement part - Sloan EBV-1024-A for 1.6 gpf (not 1.28 gpf) flush valves." },
+      { "date": "2025-10-24", "title": "Turned off water and disassembled", "details": "Shut off the water supply and carefully disassembled the flush valve assembly to access the damaged diaphragm." },
+      { "date": "2025-10-24", "title": "Replaced diaphragm", "details": "Removed the old, damaged diaphragm and installed the new replacement part." },
+      { "date": "2025-10-24", "title": "Reassembled and tested", "details": "Reassembled the flush valve assembly, turned water back on, and tested to confirm the toilet no longer runs continuously." }
+    ]
   }
 ]
